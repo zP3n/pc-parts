@@ -41,8 +41,8 @@ function createPriceItemHTML(item) {
                 <p>現在価格: ¥${item.currentPrice.toLocaleString()}</p>
                 <p>先週比: 
                     <span class="price-change ${item.changePercentage > 0 ? 'price-up' : 'price-down'}">
-                        ${item.changePercentage > 0 ? '+' : ''}${item.changePercentage}% 
-                        (${diffText})
+                        ${diffText}
+                        (${item.changePercentage > 0 ? '+' : ''}${item.changePercentage}%)
                     </span>
                 </p>
             </div>
