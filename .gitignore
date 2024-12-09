@@ -10,5 +10,5 @@ Thumbs.db
 *.log
 
 # 環境変数
-.env
+/.env
 .env.local 
