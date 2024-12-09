@@ -151,4 +151,34 @@ h1 {
 .current-price {
     font-size: 1.5rem;
     color: #333;
+}
+
+.reference-urls {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.reference-urls h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.reference-urls ul {
+    list-style: none;
+    padding: 0;
+}
+
+.reference-urls li {
+    margin-bottom: 0.5rem;
+}
+
+.reference-urls a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.reference-urls a:hover {
+    text-decoration: underline;
 } 
