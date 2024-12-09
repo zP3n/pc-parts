@@ -13,7 +13,8 @@ async function fetchProductData(productId) {
         id: product[0],
         name: product[1],
         category: product[2],
-        priceHistory: JSON.parse(product[3])
+        priceHistory: JSON.parse(product[3]),
+        referenceUrls: product[4] ? product[4].split(',') : [] // カンマ区切りで複数URLに対応
     };
 }
 
@@ -63,6 +64,20 @@ async function initProductDetail() {
         return;
     }
 
+    // 参考URLのHTML生成
+    const urlsHtml = product.referenceUrls.length > 0 
+        ? `
+            <div class="reference-urls">
+                <h3>価格参考URL</h3>
+                <ul>
+                    ${product.referenceUrls.map(url => `
+                        <li><a href="${url}" target="_blank" rel="noopener noreferrer">${new URL(url).hostname}</a></li>
+                    `).join('')}
+                </ul>
+            </div>
+        `
+        : '';
+
     // ヘッダー部分の表示を修正
     document.getElementById('product-info').innerHTML = `
         <div class="product-header">
@@ -72,6 +87,7 @@ async function initProductDetail() {
         <div class="price-history">
             <canvas id="priceChart"></canvas>
         </div>
+        ${urlsHtml}
         <div id="product-details" class="details-grid"></div>
     `;
 
