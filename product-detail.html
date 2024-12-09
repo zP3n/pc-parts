@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製品詳細 - PC部品価格トラッカー</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">PC部品価格トラッカー</a>
+            <div class="nav-links">
+                <a href="cpu.html">CPU</a>
+                <a href="gpu.html">GPU</a>
+                <a href="memory.html">Memory</a>
+                <a href="storage.html">Storage</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div id="product-info" class="product-detail">
+            <h1 id="product-name"></h1>
+            <div class="price-history">
+                <canvas id="priceChart"></canvas>
+            </div>
+            <div id="product-details" class="details-grid"></div>
+        </div>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html> 

@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+}
+
+.nav-links a:hover {
+    color: #ddd;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.price-list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.price-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.price-item h2 {
+    margin-bottom: 0.5rem;
+}
+
+.price-info {
+    margin-top: 0.5rem;
+}
+
+.price-change {
+    font-weight: bold;
+}
+
+.price-up {
+    color: #dc3545;
+}
+
+.price-down {
+    color: #28a745;
+}
+
+.category-section {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #333;
+}
+
+.product-detail {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.price-history {
+    margin: 2rem 0;
+    height: 400px;
+}
+
+.details-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.price-item {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.price-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ローディングとエラー表示用のスタイル */
+.loading, .error {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.error {
+    color: #dc3545;
+}
+
+.product-header {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.product-header h1 {
+    margin-bottom: 0;
+}
+
+.current-price {
+    font-size: 1.5rem;
+    color: #333;
+} 
