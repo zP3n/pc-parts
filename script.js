@@ -28,6 +28,12 @@ const mockData = [
 
 // 価格アイテムのHTML生成
 function createPriceItemHTML(item) {
+    // 価格の差分を計算
+    const priceDiff = item.currentPrice - item.previousPrice;
+    const diffText = priceDiff >= 0 
+        ? `+¥${priceDiff.toLocaleString()}` 
+        : `-¥${Math.abs(priceDiff).toLocaleString()}`;
+
     return `
         <div class="price-item" onclick="window.location.href='product-detail.html?id=${item.id}'">
             <h2>${item.name}</h2>
@@ -35,7 +41,8 @@ function createPriceItemHTML(item) {
                 <p>現在価格: ¥${item.currentPrice.toLocaleString()}</p>
                 <p>先週比: 
                     <span class="price-change ${item.changePercentage > 0 ? 'price-up' : 'price-down'}">
-                        ${item.changePercentage > 0 ? '+' : ''}${item.changePercentage}%
+                        ${item.changePercentage > 0 ? '+' : ''}${item.changePercentage}% 
+                        (${diffText})
                     </span>
                 </p>
             </div>
