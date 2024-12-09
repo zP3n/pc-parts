@@ -5,5 +5,3 @@ const CONFIG = {
 };
 
 //API KEY can use only zp3n.github.io
-
-export default CONFIG; 
