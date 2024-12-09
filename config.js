@@ -4,4 +4,6 @@ const CONFIG = {
     SHEET_NAME: 'Sheet1'
 };
 
+//API KEY can use only zp3n.github.io
+
 export default CONFIG; 
