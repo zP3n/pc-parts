@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>価格の算出方法について - PC部品価格トラッカー</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">PC部品価格トラッカー</a>
+            <div class="nav-links">
+                <a href="cpu.html">CPU</a>
+                <a href="gpu.html">GPU</a>
+                <a href="memory.html">Memory</a>
+                <a href="storage.html">Storage</a>
+                <a href="calc.html">価格の算出方法について</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>価格の算出方法について</h1>
+        <div class="calc-content">
+            <section class="calc-section">
+                <h2>データの収集方法</h2>
+                <p>価格データは以下の手順で収集・更新されています：</p>
+                <ul>
+                    <li>主要ECサイトの価格を毎週集計</li>
+                    <li>最安値を基準として採用</li>
+                    <li>異常値や一時的な特価は除外</li>
+                </ul>
+            </section>
+
+            <section class="calc-section">
+                <h2>価格変動率の計算</h2>
+                <p>先週比の計算方法：</p>
+                <div class="formula">
+                    <p>変動率(%) = (今週の価格 - 先週の価格) ÷ 先週の価格 × 100</p>
+                </div>
+            </section>
+
+            <section class="calc-section">
+                <h2>対象店舗</h2>
+                <p>以下の店舗の価格を参考にしています：</p>
+                <ul>
+                    <li>Amazon</li>
+                    <li>楽天市場</li>
+                    <li>ヨドバシカメラ</li>
+                    <li>ビックカメラ</li>
+                    <li>PCショップ各社</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
