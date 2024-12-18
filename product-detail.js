@@ -13,8 +13,9 @@ async function fetchProductData(productId) {
         id: product[0],
         name: product[1],
         category: product[2],
-        priceHistory: JSON.parse(product[3]),
-        referenceUrls: product[4] ? product[4].split(',') : [] // カンマ区切りで複数URLに対応
+        subcategory: product[3],
+        priceHistory: JSON.parse(product[4]),
+        referenceUrls: product[5] ? product[5].split(',') : [] // カンマ区切りで複数URLに対応
     };
 }
 
