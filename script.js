@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const currentPage = window.location.pathname.split('/').pop();
 
         if (currentPage === 'index.html' || currentPage === '') {
-            const categories = ['AMD CPU 最新世代', 'AMD CPU X3Dモデル', 'Intel CPU Ultraシリーズ', 'NVIDIA GPU', 'AMD GPU', 'Intel GPU', 'Memory', 'Storage'];
+            const categories = ['AMD CPU 最新世代', 'AMD CPU X3Dモデル', 'Intel CPU Ultraシリーズ', 'NVIDIA GPU 最新世代', 'AMD GPU 最新世代', 'Intel GPU 最新世代', 'Memory', 'Storage'];
             const categorySections = categories.map(subcategory => {
                 const categoryItems = products.filter(item => item.subcategory === subcategory);
                 return createCategorySection(subcategory, categoryItems);
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }).join('');
                 priceList.innerHTML = categorySections;
             }else if(currentPage === "gpu.html"){
-                let categories2 = ['NVIDIA GPU', 'AMD GPU', 'Intel GPU'];
+                let categories2 = ['NVIDIA GPU 最新世代', 'AMD GPU 最新世代', 'Intel GPU 最新世代','NVIDIA GPU 3000シリーズ', 'AMD GPU 6000シリーズ', 'Intel GPU Aシリーズ','NVIDIA GPU 1000シリーズ'];
                 const categorySections = categories2.map(subcategory => {
                     const categoryItems = products.filter(item => item.subcategory === subcategory);
                     return createCategorySection(subcategory, categoryItems);
