@@ -99,7 +99,7 @@ async function fetchAllProducts() {
 
         return rows.map(row => {
             try {
-                const priceHistory = JSON.parse(row[3]);
+                const priceHistory = JSON.parse(row[4]);
                 const dates = Object.keys(priceHistory).sort();
                 const currentPrice = priceHistory[dates[dates.length - 1]];
                 const previousPrice = dates.length > 1 ? priceHistory[dates[dates.length - 2]] : currentPrice;
@@ -108,6 +108,7 @@ async function fetchAllProducts() {
                     id: row[0],
                     name: row[1],
                     category: row[2],
+                    subcategory: row[3],
                     priceHistory: priceHistory,
                     currentPrice: currentPrice,
                     previousPrice: previousPrice,
@@ -142,21 +143,50 @@ document.addEventListener('DOMContentLoaded', async () => {
         const currentPage = window.location.pathname.split('/').pop();
 
         if (currentPage === 'index.html' || currentPage === '') {
-            const categories = ['CPU', 'GPU', 'Memory', 'Storage'];
-            const categorySections = categories.map(category => {
-                const categoryItems = products.filter(item => item.category === category);
-                return createCategorySection(category, categoryItems);
+            const categories = ['AMD CPU 最新世代', 'AMD CPU X3Dモデル', 'Intel CPU Ultraシリーズ', 'NVIDIA GPU', 'AMD GPU', 'Intel GPU', 'Memory', 'Storage'];
+            const categorySections = categories.map(subcategory => {
+                const categoryItems = products.filter(item => item.subcategory === subcategory);
+                return createCategorySection(subcategory, categoryItems);
             }).join('');
             
             priceList.innerHTML = categorySections;
         } else {
-            const category = currentPage.split('.')[0].toUpperCase();
-            const filteredData = products.filter(item => item.category === category);
-            const priceItemsHTML = filteredData
-                .map(item => createPriceItemHTML(item))
-                .join('');
+            // const category = currentPage.split('.')[0].toUpperCase();
+            // const filteredData = products.filter(item => item.category === category);
+            // const priceItemsHTML = filteredData
+            //     .map(item => createPriceItemHTML(item))
+            //     .join('');
             
-            priceList.innerHTML = priceItemsHTML;
+            // priceList.innerHTML = priceItemsHTML;
+            if(currentPage === "cpu.html"){
+                let categories2 = ['AMD CPU 最新世代', 'AMD CPU X3Dモデル', 'Intel CPU Ultraシリーズ', 'AMD CPU Ryzen 7000シリーズ', 'Intel CPU 第14世代', 'AMD CPU Ryzen 5000シリーズ', 'Intel CPU 第13世代', 'AMD CPU 特殊モデル'];
+                const categorySections = categories2.map(subcategory => {
+                    const categoryItems = products.filter(item => item.subcategory === subcategory);
+                    return createCategorySection(subcategory, categoryItems);
+                }).join('');
+                priceList.innerHTML = categorySections;
+            }else if(currentPage === "gpu.html"){
+                let categories2 = ['NVIDIA GPU', 'AMD GPU', 'Intel GPU'];
+                const categorySections = categories2.map(subcategory => {
+                    const categoryItems = products.filter(item => item.subcategory === subcategory);
+                    return createCategorySection(subcategory, categoryItems);
+                }).join('');
+                priceList.innerHTML = categorySections;
+            }else if(currentPage === "memory.html"){
+                let categories2 = ['Memory'];
+                const categorySections = categories2.map(subcategory => {
+                    const categoryItems = products.filter(item => item.subcategory === subcategory);
+                    return createCategorySection(subcategory, categoryItems);
+                }).join('');
+                priceList.innerHTML = categorySections;
+            }else{
+                let categories2 = ['Storage'];
+                const categorySections = categories2.map(subcategory => {
+                    const categoryItems = products.filter(item => item.subcategory === subcategory);
+                    return createCategorySection(subcategory, categoryItems);
+                }).join('');
+                priceList.innerHTML = categorySections;
+            }
         }
     } catch (error) {
         showError(priceList, error.message);
