@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const currentPage = window.location.pathname.split('/').pop();
 
         if (currentPage === 'index.html' || currentPage === '') {
-            const categories = ['AMD CPU 最新世代', 'AMD CPU X3Dモデル', 'Intel CPU Ultraシリーズ', 'NVIDIA GPU 最新世代', 'AMD GPU 最新世代', 'Intel GPU 最新世代', 'DDR5 メモリー 8GB×2', 'Storage'];
+            const categories = ['AMD CPU 最新世代', 'AMD CPU X3Dモデル', 'Intel CPU Ultraシリーズ', 'NVIDIA GPU 最新世代', 'AMD GPU 最新世代', 'Intel GPU 最新世代', 'DDR5 メモリー 8GB×2', 'DDR5 メモリー 16GB×2'];
             const categorySections = categories.map(subcategory => {
                 const categoryItems = products.filter(item => item.subcategory === subcategory);
                 return createCategorySection(subcategory, categoryItems);
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }).join('');
                 priceList.innerHTML = categorySections;
             }else if(currentPage === "memory.html"){
-                let categories2 = ['DDR5 メモリー 8GB×2'];
+                let categories2 = ['DDR5 メモリー 8GB×2', 'DDR5 メモリー 16GB×2'];
                 const categorySections = categories2.map(subcategory => {
                     const categoryItems = products.filter(item => item.subcategory === subcategory);
                     return createCategorySection(subcategory, categoryItems);
